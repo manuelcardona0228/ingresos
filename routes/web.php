@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\EgresoController;
+use App\Http\Controllers\IngresoController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,4 +23,7 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
+
+Route::get('contrato/{id}/ingresos', [IngresoController::class, 'ingresoContratoIndex'])->name('contrato.ingreso.index');
+Route::get('contrato/{id}/egresos', [EgresoController::class, 'egresoContratoIndex'])->name('contrato.egreso.index');
 require __DIR__.'/auth.php';

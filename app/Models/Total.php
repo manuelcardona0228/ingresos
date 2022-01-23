@@ -15,4 +15,8 @@ class Total extends Model
     protected $fillable = [
         'valor', 'contrato_id'
     ];
+
+    public function contrato(){
+        return $this->belongsTo(Contrato::class);
+    }
 }

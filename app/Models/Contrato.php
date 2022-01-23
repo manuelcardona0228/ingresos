@@ -15,4 +15,8 @@ class Contrato extends Model
     protected $fillable = [
         'nombre', 'descripcion', 'estado', 'creado_por'
     ];
+
+    public function total(){
+        return $this->hasOne(Total::class);
+    }
 }
